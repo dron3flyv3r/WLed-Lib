@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='WLed-Control',
-  version='1.1.0',
+  version='1.1.2',
   description='A very basic WLed control library',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='',  
@@ -20,5 +20,5 @@ setup(
   classifiers=classifiers,
   keywords='Wled', 
   packages=find_packages(),
-  install_requires=['requests', "webcolors"]
+  install_requires=['requests==2.27.1', "webcolors==1.12"]
 )

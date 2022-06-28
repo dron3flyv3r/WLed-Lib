@@ -1,5 +1,6 @@
 import webcolors as wc
 from requests import get, post
+import time
 
 class WLedControl:
     def __init__(self, ip, port="80"):
@@ -35,6 +36,7 @@ class WLedControl:
         fx = get(f"http://{self.ip}/json").json()["state"]["seg"][0]["fx"]
         effects = get(f"http://{self.ip}/json").json()["effects"]
         return effects[fx]
+    
     def set_fx(self, efx):
         if type(efx) == str:
             efx = efx.capitalize()
@@ -47,11 +49,10 @@ class WLedControl:
     def set_speed(self, speed):
         post(f"http://{self.ip}/win&SX={speed}")
         
+        
             
     
 if __name__ == '__main__':
     wled = WLedControl('192.168.1.180')
-    fx = wled.get_fx()
-    wled.set_fx("Colorful")
 
     
