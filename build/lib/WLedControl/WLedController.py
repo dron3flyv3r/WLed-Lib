@@ -70,3 +70,10 @@ class WLedController:
         post(f"http://{self.ip}/win&R={col[0]}&G={col[1]}&B={col[2]}&FX=1&SX=230")
         sleep(time)
         post(f"http://{self.ip}/win&R={oldColor[0]}&G={oldColor[1]}&B={oldColor[2]}&FX={index}&SX={oldSpeed}")
+        
+        
+            
+    
+if __name__ == '__main__':
+    wled = WLedController('192.168.1.180')
+    wled.blink("green")

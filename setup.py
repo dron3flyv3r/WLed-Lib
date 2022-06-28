@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='WLed-Control',
-  version='1.1.2',
+  version='1.3.3',
   description='A very basic WLed control library',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='',  
