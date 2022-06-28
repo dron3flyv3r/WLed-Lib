@@ -21,10 +21,8 @@ class WLedControl:
         post(f"http://{self.ip}/win&A={bri}")
         
     def get_col(self):
-        try:
-            return wc.rgb_to_name(get(f"http://{self.ip}/json").json()["state"]["seg"][0]["col"][0], spec='css3')
-        except:
-            return get(f"http://{self.ip}/json").json()["state"]["seg"][0]["col"][0]
+        return get(f"http://{self.ip}/json").json()["state"]["seg"][0]["col"][0]
+
     
     def set_col(self, col):
         if type(col) == str:
